@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Dictionary {
@@ -9,7 +8,7 @@ public class Dictionary {
     public void Dictionary(String fileName) {
         //this method reads the file and stores the words in the hashmap
         try {
-            java.util.Scanner file = new java.util.Scanner(new java.io.File(fileName));
+            Scanner file = new Scanner(new java.io.File(fileName));
             wordList=new String[file.nextInt()];
             for(int i=0;i<wordList.length;i++){ 
                 wordList[i]=file.nextLine();  
