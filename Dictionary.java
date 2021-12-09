@@ -103,4 +103,18 @@ public class Dictionary {
         // return false;
 
     }
+    public static String replaceFrenchCharacter(String word) {
+        //this method replaces the french characters with their english equivalents
+        return word
+        .toLowerCase()
+        .replaceAll("[àâä]" , "a")
+        .replaceAll("ç"     , "c")
+        .replaceAll("[éèêë]", "e")
+        .replaceAll("[îï]"  , "i")
+        .replaceAll("[ôö]"  , "o")
+        .replaceAll("[ùüû]" , "u")
+        .replaceAll("œ"     , "oe")
+        .replaceAll("æ"     , "ae");
+    }
+               
 }
