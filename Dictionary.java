@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.List;
 
 public class Dictionary {
     //this class gets the words from the file and stores them in a hashmap
@@ -42,6 +43,7 @@ public class Dictionary {
         java.util.Arrays.sort(wordList);
     }
     public boolean mayBeComposed(String word, char[] letters) {
+        word= replaceFrenchCharacter(word);
         boolean[] isUsed = new boolean[letters.length]; // isUsed is of the same size as letters
         Arrays.fill(isUsed, false); // set  all  elements  to  false
         for (int i = 0; i < word.length(); i++) {
@@ -107,14 +109,19 @@ public class Dictionary {
         //this method replaces the french characters with their english equivalents
         return word
         .toLowerCase()
-        .replaceAll("[àâä]" , "a")
-        .replaceAll("ç"     , "c")
         .replaceAll("[éèêë]", "e")
-        .replaceAll("[îï]"  , "i")
-        .replaceAll("[ôö]"  , "o")
+        .replaceAll("[àâä]" , "a")
         .replaceAll("[ùüû]" , "u")
+        .replaceAll("[ôö]"  , "o")
+        .replaceAll("[îï]"  , "i")
         .replaceAll("œ"     , "oe")
-        .replaceAll("æ"     , "ae");
+        .replaceAll("æ"     , "ae")
+        .replaceAll("ç"     , "c");
     }
-               
+    public List<String> getWordsThatCanBeComposed(char[] letters) {
+        //this method checks if a word can be composed from the letters
+        return null;
+    }
+        
 }
+
